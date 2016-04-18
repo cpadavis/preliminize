@@ -1,5 +1,7 @@
 """
-A license should go here.
+MIT License
+
+Author: Chris Davis
 """
 
 import matplotlib.pyplot as plt
@@ -14,9 +16,6 @@ def preliminize(text="Preliminary", ax=None, **kwargs):
 
     text : str, default "Preliminary"
         Text we add to figure.
-
-    location : list of coordinates
-        From where to where do we want the text to span?
 
     ax : matplotlib axis
         What axis?
