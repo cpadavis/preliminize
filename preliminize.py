@@ -29,7 +29,7 @@ def preliminize(text="Preliminary", ax=None, **kwargs):
     """
 
     # get axis if no ax is provided
-    if not ax:
+    if type(ax) == type(None):
         ax = plt.gca()
     fontdict = {'horizontalalignment': 'center',
                 'verticalalignment': 'center',
