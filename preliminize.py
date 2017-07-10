@@ -33,8 +33,8 @@ def preliminize(text="Preliminary", ax=None, **kwargs):
         ax = plt.gca()
     fontdict = {'horizontalalignment': 'center',
                 'verticalalignment': 'center',
-                'fontname': 'Arial',
-                'alpha': 0.2}
+                'color': 'red',
+                'alpha': 0.8}
 
     # get rotation from axis to display
     x0, y0 = ax.transAxes.transform((0, 0))
@@ -53,7 +53,7 @@ def preliminize(text="Preliminary", ax=None, **kwargs):
     # width of the text tan theta = dy / dx from earlier. we multiply by 0.75
     # because this didn't actually work perfectly.
     size = int(sqrt(dy ** 2 + dx ** 2) / (dh * abs(dy / dx) + dw) * 0.75)
-    fontdict['size'] = size
+    fontdict['size'] = size / (fig.dpi / 100.)
 
     # update with any kwargs
     fontdict.update(kwargs)
