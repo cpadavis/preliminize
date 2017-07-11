@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from matplotlib.textpath import TextPath
 from math import pi, atan2, sqrt
 
-def preliminize(text="Preliminary", ax=None, **kwargs):
+def preliminize(text="Preliminary", ax=None, dpi=100, **kwargs):
     """A very simple code for adding words to a figure.
 
     Parameters
@@ -19,6 +19,9 @@ def preliminize(text="Preliminary", ax=None, **kwargs):
 
     ax : matplotlib axis
         What axis?
+
+    dpi : integer, default 100
+        dpi used to make figures. Need to use this if your dpi is NOT 100
 
     kwargs : goes into the text
 
@@ -53,7 +56,7 @@ def preliminize(text="Preliminary", ax=None, **kwargs):
     # width of the text tan theta = dy / dx from earlier. we multiply by 0.75
     # because this didn't actually work perfectly.
     size = int(sqrt(dy ** 2 + dx ** 2) / (dh * abs(dy / dx) + dw) * 0.75)
-    fontdict['size'] = size / (fig.dpi / 100.)
+    fontdict['size'] = size / (dpi / 100.)
 
     # update with any kwargs
     fontdict.update(kwargs)
